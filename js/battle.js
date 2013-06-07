@@ -4037,9 +4037,9 @@ function Battle(frame, logFrame, noPreload) {
 					break;
 				case 'skillswap':
 					actions += "" + poke.getName() + " swapped Abilities with its target!";
-					if (poke.side !== ofpoke.side) {
-       						actions += "" + poke.getName() + " obtained " + poke.ability.name + ".";
-       						actions += "" + ofpoke.getLowerName() + " obtained " + ofpoke.ability.name + ".";
+					if (!args[5]) {
+       						actions += "" + poke.getName() + " obtained " + Tools.getAbility(args[3]) + ".";
+       						actions += "" + ofpoke.getLowerName() + " obtained " + Tools.getAbility(args[4]) + ".";
 					}
 					break;
 				case 'charge':
